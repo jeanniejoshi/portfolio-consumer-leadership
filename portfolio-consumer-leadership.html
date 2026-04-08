@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeannie Joshi | Consumer Brand Leadership: Beauty + CPG</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* WGSN Elemental — solid equivalents of translucent Venn values */
+  --ink:#2A4A45; --mid:#3E6F68; --sub:#4F84A6; --accent:#B5706A; --accent2:#B5706A;
+  --tint:#F7F4F5; --tint2:#F0EAED; --rule:#E8E0E5; --white:#FFFFFF;
+  --warm:#FBF7F6; --warm-border:#E8E0E5; --warm-accent:#B5706A;
+  --phase1:#FBF3F2; --phase2:#F8FAFA; --phase3:#F3F7FA;
+  --rose-t:#FBF3F2; --ice-t:#F7F4F5; --blue-t:#F3F7FA;
+  --serif:'Playfair Display',Georgia,serif; --sans:'Outfit',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.7;font-size:15px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:0 2rem;overflow-x:auto;white-space:nowrap}
+.nav-in{max-width:860px;margin:0 auto;display:flex;align-items:stretch}
+.nav a{display:inline-block;padding:.75rem 1rem;font-size:.72rem;font-weight:500;letter-spacing:.06em;color:var(--sub);text-decoration:none;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav a:hover,.nav a:focus{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* LAYOUT */
+.pg{max-width:860px;margin:0 auto;padding:0 2rem}
+.sec{padding:3rem 0}.sec+.sec{border-top:1px solid var(--rule)}
+.sec-warm{background:#FDF8F7}.sec-tint{background:#F7F4F5}
+.ey{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
+.ey-bar{width:24px;height:2px;background:var(--accent)}
+.ey span{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.sdesc{font-size:.82rem;color:var(--sub);margin-bottom:1.5rem;line-height:1.8}
+
+/* HEADER */
+.hdr{padding:3rem 0 0}
+.hdr h1{font-family:var(--serif);font-size:1.8rem;margin-bottom:.5rem}
+.tl{font-size:.78rem;color:var(--sub);margin-bottom:.2rem;letter-spacing:.03em;line-height:1.5}
+.tl:last-of-type{margin-bottom:2rem;font-size:.72rem}
+.premise{font-family:var(--serif);font-size:1.1rem;color:var(--ink);margin-bottom:1.5rem;line-height:1.7}
+.intro p{font-size:.88rem;color:var(--mid);line-height:1.9;margin-bottom:1.25rem}
+
+/* METRICS */
+.met{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);margin:2rem 0}
+.m{padding:1rem .75rem;border-right:1px solid var(--rule);text-align:center}
+.m:last-child{border-right:none}
+.m-n{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--accent);display:block;margin-bottom:.3rem}
+.m-d{font-size:.65rem;color:var(--sub);line-height:1.4}
+
+/* CONTEXT BOXES */
+.ctx{background:var(--rose-t);border-left:3px solid #DDBDBA;padding:1.25rem 1.5rem;margin:2rem 0}
+.ctx p{font-size:.82rem;color:var(--mid);line-height:1.8;margin:0}
+.ctx .cite{font-style:normal;font-size:.7rem;margin-top:.5rem;color:var(--sub)}
+.ctx-warm{background:var(--ice-t);border-left-color:#E8E0E5}
+
+/* COLLAPSIBLE CARDS — Nielsen */
+.cd{border:1px solid var(--rule);margin-bottom:1.25rem;border-radius:2px}
+.cd-h{padding:1rem 1.25rem .75rem;cursor:pointer;position:relative;display:flex;flex-direction:column;gap:.15rem}
+.cd-h:hover{background:var(--rose-t)}
+.cd-h:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.cd-chevron{position:absolute;right:1.25rem;top:1.1rem;width:16px;height:16px;transition:transform .2s}
+.cd-chevron svg{width:16px;height:16px;fill:none;stroke:var(--sub);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cd[aria-expanded="true"] .cd-chevron{transform:rotate(180deg)}
+.cd-t{font-size:.92rem;font-weight:600;color:var(--ink);padding-right:2rem}
+.cd-c{font-size:.75rem;color:var(--sub);font-weight:400;margin-left:.35rem}
+.cd-s{font-size:.75rem;color:var(--accent);margin-top:.15rem;line-height:1.5;padding-right:2rem}
+.cd-hint{font-size:.6rem;color:var(--sub);margin-top:.3rem;letter-spacing:.05em}
+.cd-b{display:none;padding:1rem 1.25rem;border-top:1px solid var(--rule)}
+.cd[aria-expanded="true"] .cd-b{display:block}
+.cd-txt{font-size:.82rem;color:var(--mid);line-height:1.85;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{font-size:.65rem;color:var(--accent);font-weight:500;padding:.3rem .7rem;background:var(--rose-t);border:1px solid #F0DCD9}
+
+/* RECOGNITION TAGS */
+.rh{font-size:.78rem;font-weight:500;color:var(--ink);margin:1.25rem 0 .5rem}
+.rr{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0}
+.rt{font-size:.72rem;color:var(--mid);padding:.35rem .75rem;border:1px solid #E8E0E5;background:var(--ice-t)}
+
+/* WAYS OF WORKING */
+.ways{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0}
+.way{background:var(--warm);padding:1.25rem}
+.way-n{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--warm-accent);margin-bottom:.35rem}
+.way-txt{font-size:.78rem;color:var(--mid);line-height:1.7;font-style:italic}
+
+/* PRACTICE RANGE */
+.prange{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0}
+.pr{background:var(--white);padding:1.25rem}
+.pr-t{font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
+.pr-d{font-size:.72rem;color:var(--mid);line-height:1.6}
+
+/* MATRIX */
+.mx{width:100%;border-collapse:collapse;border:1px solid var(--rule);margin:1.5rem 0;font-size:.72rem}
+.mx th{padding:.5rem;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);background:var(--ice-t);border:1px solid var(--rule);text-align:center}
+.mx th:first-child{text-align:left;min-width:160px}
+.mx td{padding:.5rem;border:1px solid var(--rule);text-align:center;color:var(--mid)}
+.mx td:first-child{text-align:left;font-weight:500;color:var(--ink);font-size:.7rem}
+.dot{color:var(--accent);font-size:.9rem}
+
+/* THREE-COL */
+.tri{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule);margin:1.5rem 0}
+.tri-c{padding:1.25rem;border-right:1px solid var(--rule)}
+.tri-c:last-child{border-right:none}
+.tri-t{font-size:.85rem;font-weight:500;color:var(--ink);margin-bottom:.25rem}
+.tri-s{font-size:.75rem;color:var(--sub)}
+
+/* AXES */
+.ax-w{display:flex;justify-content:center;margin:1.5rem 0}
+.ax-d{position:relative;width:240px;height:200px}
+.ax-ctr{width:80px;height:80px;border:.5px solid var(--rule);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center}
+.ax-inn{width:52px;height:52px;background:#FBF7EC;border:.5px solid #D4B95E}
+.axl{position:absolute;background:var(--rule)}
+.axv{width:.5px;height:30px;left:50%;transform:translateX(-50%)}.axv.t{top:20px}.axv.b{bottom:20px}
+.axh{height:.5px;width:30px;top:50%;transform:translateY(-50%);right:16px}
+.axlb{position:absolute;font-size:.75rem;font-weight:500;color:var(--ink)}
+.axlb.t{top:2px;left:50%;transform:translateX(-50%)}.axlb.r{right:0;top:50%;transform:translateY(-50%)}.axlb.b{bottom:2px;left:50%;transform:translateX(-50%)}
+
+/* PHASED */
+.phased{border:1px solid var(--rule);margin:1.5rem 0}
+.ph-h{display:grid;grid-template-columns:repeat(3,1fr)}
+.ph-p{padding:.75rem;text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--rule)}
+.ph-a{display:grid;grid-template-columns:repeat(3,1fr)}
+.ph-c{padding:1rem;border-right:1px solid var(--rule)}.ph-c:last-child{border-right:none}
+.ph-q{font-size:.82rem;font-weight:500;color:var(--ink);font-style:italic;margin-bottom:.5rem}
+.ph-dt{font-size:.72rem;color:var(--mid);line-height:1.7}
+.ph-g{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
+.ph-gl{padding:.7rem 1rem;border-right:1px solid var(--rule);display:flex;align-items:center;gap:.5rem}
+.ph-gl:last-child{border-right:none}
+.ph-gl-l{width:20px;height:20px;border-radius:50%;background:var(--accent);color:white;font-size:.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ph-gl-t{font-size:.72rem;font-weight:500;color:var(--ink)}
+.ph-ap{display:grid;grid-template-columns:repeat(7,1fr);gap:.4rem;padding:1rem;border-top:1px solid var(--rule)}
+.ap{background:var(--tint);padding:.5rem .35rem;text-align:center;font-size:.6rem;color:var(--mid);line-height:1.4;border:1px solid var(--rule)}
+.ap-n{font-family:var(--serif);font-size:.85rem;font-weight:700;color:var(--accent);display:block;margin-bottom:.1rem}
+.ph-nt{font-size:.75rem;color:var(--sub);font-style:italic;text-align:center;padding:.75rem 1rem;border-top:1px solid var(--rule)}
+
+/* PATH */
+.path{display:flex;align-items:center;margin:1.5rem 0;overflow-x:auto}
+.pn{flex:1;min-width:140px;text-align:center;padding:.75rem .5rem;position:relative}
+.pn::after{content:'→';position:absolute;right:-6px;top:50%;transform:translateY(-50%);color:var(--rule);font-size:.9rem}
+.pn:last-child::after{display:none}
+.pn-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin:0 auto .4rem}
+.pn-l{font-size:.72rem;font-weight:500;color:var(--ink);line-height:1.4}
+.phil{font-size:.85rem;color:var(--mid);line-height:2}
+
+/* METHOD */
+.mc{border:1px solid var(--rule);margin-bottom:1rem;border-radius:2px}
+.mc-h{padding:1rem 1.25rem;cursor:pointer;position:relative}
+.mc-h:hover{background:var(--ice-t)}
+.mc-chevron{position:absolute;right:1.25rem;top:1.1rem;width:16px;height:16px;transition:transform .2s}
+.mc-chevron svg{width:16px;height:16px;fill:none;stroke:var(--sub);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mc[aria-expanded="true"] .mc-chevron{transform:rotate(180deg)}
+.mc-t{font-size:.85rem;font-weight:500;color:var(--ink);margin-bottom:.35rem;padding-right:2rem}
+.sb{display:inline-grid;grid-template-columns:repeat(3,auto);margin-bottom:.35rem}
+.sc{padding:.2rem .6rem;font-size:.6rem;font-weight:500;text-align:center}
+.sc.e{background:var(--rose-t);color:var(--ink)}.sc.x{background:var(--ice-t);color:var(--ink)}.sc.l{background:var(--blue-t);color:var(--ink)}.sc.off{background:#F9F7F8;color:var(--sub);opacity:.3}
+.mc-u{font-size:.72rem;color:var(--mid);line-height:1.6}
+.mc-b{display:none;padding:0 1.25rem 1.25rem;border-top:1px solid var(--rule)}
+.mc[aria-expanded="true"] .mc-b{display:block}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.mgc{background:var(--white);padding:.75rem}
+.mgc-q{font-size:.6rem;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.15rem}
+.mgc-l{font-size:.75rem;font-weight:500;color:var(--ink);margin-bottom:.3rem}
+.mgc-d{font-size:.7rem;color:var(--mid);line-height:1.6}
+
+/* TABLE */
+.pt{width:100%;border-collapse:collapse;border:1px solid var(--rule);margin:1.5rem 0}
+.pt th{padding:.6rem .8rem;font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--sub);background:var(--ice-t);border-bottom:1px solid var(--rule);text-align:left}
+.pt td{padding:.75rem .8rem;font-size:.78rem;color:var(--mid);border-bottom:1px solid var(--rule);line-height:1.6}
+.pt td:first-child{font-weight:500;color:var(--ink);white-space:nowrap}
+.pt td:nth-child(2){font-weight:500;color:var(--ink)}
+
+/* CLOSING */
+.closing{font-family:var(--serif);font-size:1.05rem;color:var(--mid);font-style:italic;line-height:1.8;max-width:560px}
+
+/* ACQUISITION BADGE */
+.acq{display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;padding:.4rem .75rem;background:var(--rose-t);border:1px solid #EACCC9;font-size:.68rem;font-weight:600;color:var(--accent);letter-spacing:.04em}
+.acq::before{content:'★';font-size:.7rem}
+
+/* RESPONSIVE */
+@media(max-width:680px){
+  body{font-size:15px;line-height:1.75}
+  .pg{padding:0 1rem;overflow-x:hidden}
+  .nav{position:relative}
+  .nav::after{content:'→';position:absolute;right:.5rem;top:50%;transform:translateY(-50%);font-size:.75rem;color:var(--accent);opacity:.6;animation:pulse 2s ease-in-out 3;pointer-events:none}
+  .nav a{padding:.7rem .65rem;font-size:.65rem}
+  .hdr{padding:2rem 0 0}
+  .hdr h1{font-size:1.5rem}
+  .tl{font-size:.7rem}
+  .tl:last-of-type{margin-bottom:1.5rem}
+  .premise{font-size:.92rem;line-height:1.7}
+  .intro p{font-size:.82rem;line-height:1.8}
+
+  /* Yin-yang descriptions stack */
+  
+  
+
+  /* Metrics: 2-col, last item spans full */
+  .met{grid-template-columns:repeat(2,1fr)!important}
+  .m{border-bottom:1px solid var(--rule);padding:.85rem .6rem}
+  .m:last-child{border-bottom:none;grid-column:1/-1}
+  .m-n{font-size:1.1rem}
+  .m-d{font-size:.6rem}
+
+  /* Context boxes */
+  .ctx{padding:.85rem 1rem;margin:1.25rem 0}
+
+  /* Impact cards — fix text ragging */
+  .cd-h{padding:.85rem 1rem}
+  .cd-b{padding:.75rem 1rem}
+  .cd-t{font-size:.85rem}
+  .cd-s{font-size:.72rem}
+  .cd-txt{font-size:.78rem;line-height:1.75}
+
+  /* Tags wrap tighter */
+  .tags{gap:.35rem}
+  .tag{font-size:.6rem;padding:.2rem .5rem}
+
+  /* Recognition tags */
+  .rr{gap:.3rem}
+  .rt{font-size:.65rem;padding:.25rem .55rem}
+
+  /* Ways of working */
+  .ways{grid-template-columns:1fr}
+  .way{padding:.85rem}
+
+  /* Three-col stacks */
+  .tri{grid-template-columns:1fr}
+  .tri-c{border-right:none;border-bottom:1px solid var(--rule);padding:.85rem}
+  .tri-c:last-child{border-bottom:none}
+
+  /* Axes diagram */
+  .ax-w{margin:1rem 0}
+  .ax-d{width:180px;height:150px}
+
+  /* ALL tables — scroll indicator for mobile */
+  .mx,.pt{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;border:1px solid var(--rule);position:relative}
+  .mx{font-size:.55rem}
+  .mx th,.mx td{padding:.3rem .25rem;white-space:nowrap;min-width:55px;font-size:.55rem}
+  .mx th:first-child,.mx td:first-child{min-width:80px;position:sticky;left:0;background:#fff;z-index:1;border-right:2px solid var(--rule)}
+  .mx thead th{background:var(--tint);position:sticky;top:0;z-index:2}
+  .mx thead th:first-child{z-index:3}
+  .pt{font-size:.68rem}
+  .pt th,.pt td{padding:.4rem .4rem;font-size:.65rem}
+  .pt td:first-child{white-space:nowrap}
+
+  /* Scroll hint wrapper */
+  .scroll-wrap{position:relative}
+  .scroll-wrap::after{content:'Scroll →';position:absolute;bottom:-1.25rem;right:0;font-size:.58rem;color:var(--accent);letter-spacing:.05em;font-weight:500;animation:pulse 2s ease-in-out 3}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  /* Fade on right edge to hint more content */
+  .scroll-fade{position:relative}
+  .scroll-fade::before{content:'';position:absolute;top:0;right:0;bottom:0;width:30px;background:linear-gradient(to right,transparent,rgba(255,255,255,.85));pointer-events:none;z-index:4}
+
+  /* Engagement cards */
+  .mc-h{padding:.85rem 1rem}
+  .mc-t{font-size:.8rem;line-height:1.4}
+  .mc-u{font-size:.7rem}
+  .mc-b{padding:0 .85rem .85rem}
+  .mg{grid-template-columns:1fr}
+  .mgc{padding:.6rem}
+  .mgc-d{font-size:.68rem;line-height:1.55}
+  .sb{display:flex;flex-wrap:wrap;gap:2px;margin-bottom:.2rem}
+  .sc{padding:.2rem .45rem;font-size:.55rem}
+
+  /* Focus 3-col stacks on mobile */
+  #focus div[style*="grid-template-columns"]{grid-template-columns:1fr!important}
+
+  /* Programs cards: 4-col grid stacks to 2-col on mobile */
+  #programs div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important}
+
+  /* BBW indent resets on mobile */
+  #focus > div[style*="margin:1.5rem 0 1rem 2rem"]{margin-left:0!important}
+
+  /* How the work happened 2×3 stacks */
+  #appendix div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+
+  /* THE ENGAGEMENT and THE WORK flex stacks */
+  #methodology div[style*="display:flex;gap:0"]{flex-direction:column}
+  #methodology div[style*="display:flex;gap:0"] div[style*="position:absolute"]{display:none}
+  #methodology div[style*="display:flex;gap:0"] > div{border-left:3px solid #DDBDBA!important;border-top:1px solid #E8E0E5}
+
+  /* Full-bleed sections */
+  #recognition,#focus{padding:2rem 1rem!important;margin:0 -1rem!important}
+
+  /* Discovery question rows stack */
+  #methodology div[style*="display:flex"] > div[style*="min-width:180px"]{min-width:0!important;width:100%;border-bottom:none;padding:.4rem .85rem .1rem;font-size:.7rem}
+  #methodology div[style*="display:flex"] > div[style*="flex:1"]{padding:.1rem .85rem .5rem;font-size:.72rem}
+  #methodology div[style*="display:flex"]{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Page sections"><div class="nav-in">
+<a href="#overview">Overview</a><a href="#focus">Focus</a><a href="#impact">Impact</a><a href="#partnerships">Partnerships</a><a href="#methodology">Methodology</a><a href="#programs">Programs</a><a href="#depth">Depth</a><a href="#recognition">Recognition</a><a href="#appendix">Appendix</a>
+</div></nav>
+
+<div class="pg">
+
+<!-- OVERVIEW -->
+<header class="hdr" id="overview"><h1>Jeannie Joshi</h1><p class="tl"><strong>Principal</strong> · Joshi Design LLC · Founded 2002 · Active practice: 2007–2022</p>
+<p class="tl" style="color:var(--accent)">Brand Strategy · Innovation · Creative Direction · Design-Technology</p></header>
+
+<section class="sec">
+<div class="ctx" style="margin-bottom:1.5rem"><p>Beauty and anthropological awareness should inform commercial design in the digital age.</p></div>
+<p class="premise" style="text-align:center;max-width:640px;margin-left:auto;margin-right:auto"><strong>Making the Extraordinary Relatable.</strong> How do we create a visual, tactile, and imaginative experience that will invite a global audience to interact with&nbsp;this&nbsp;product?</p>
+
+<!-- VENN DIAGRAM -->
+<div style="text-align:center;margin:2.5rem auto 1rem;max-width:100%;overflow:hidden">
+<svg viewBox="0 0 440 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;height:auto;display:block;margin:0 auto">
+<defs><clipPath id="clipLeft"><circle cx="150" cy="120" r="95"/></clipPath></defs>
+<circle cx="150" cy="120" r="95" fill="#B5706A" opacity=".06" stroke="#B5706A" stroke-width="1.5"/>
+<circle cx="290" cy="120" r="95" fill="#4F84A6" opacity=".06" stroke="#4F84A6" stroke-width="1.5"/>
+<circle cx="290" cy="120" r="95" clip-path="url(#clipLeft)" fill="#FFFFFF" opacity="1"/>
+<circle cx="290" cy="120" r="95" clip-path="url(#clipLeft)" fill="#D4B95E" opacity=".18"/>
+<text x="100" y="117" text-anchor="middle" font-family="Outfit,system-ui,sans-serif" font-size="13" font-weight="500" fill="#B5706A">Physical</text>
+<text x="100" y="133" text-anchor="middle" font-family="Outfit,system-ui,sans-serif" font-size="10" fill="#B5706A" opacity=".7">Experience</text>
+<text x="340" y="117" text-anchor="middle" font-family="Outfit,system-ui,sans-serif" font-size="13" font-weight="500" fill="#4F84A6">Digital</text>
+<text x="340" y="133" text-anchor="middle" font-family="Outfit,system-ui,sans-serif" font-size="10" fill="#4F84A6" opacity=".7">Experience</text>
+<text x="220" y="117" text-anchor="middle" font-family="Outfit,system-ui,sans-serif" font-size="12" font-weight="600" fill="#2A4A45">Interdisciplinary</text>
+<text x="220" y="133" text-anchor="middle" font-family="Outfit,system-ui,sans-serif" font-size="10" fill="#2A4A45" opacity=".7">Design</text>
+</svg>
+</div>
+<div style="display:flex;justify-content:center;gap:1.5rem;margin:0 0 2rem;max-width:720px;margin-left:auto;margin-right:auto;flex-wrap:wrap">
+<div style="flex:1;min-width:180px;font-size:.75rem;color:var(--mid);line-height:1.65;text-align:center"><strong style="color:#B5706A;font-weight:600;display:block;margin-bottom:.2rem">Physical Experience</strong>Retail environments, brand activations, packaging, product graphics, strategic imagery, and production.</div>
+<div style="flex:1;min-width:180px;font-size:.75rem;color:var(--mid);line-height:1.65;text-align:center"><strong style="color:var(--ink);font-weight:600;display:block;margin-bottom:.2rem">Interdisciplinary Design</strong>Brand strategy, integrated identity systems, creative direction, and messaging.</div>
+<div style="flex:1;min-width:180px;font-size:.75rem;color:var(--mid);line-height:1.65;text-align:center"><strong style="color:#4F84A6;font-weight:600;display:block;margin-bottom:.2rem">Digital Experience</strong>Websites, interfaces, content strategy, interaction design, and digital systems.</div>
+</div>
+
+<div class="intro">
+<p>Founded and led a five-person strategic design practice in New York spanning fifteen years. Directed brand strategy, creative, and production across beauty, luxury fragrance, confectionery, housewares, toys, and retail, from concept through execution.</p>
+<p>Partnered directly with Fortune 500 companies, founder-led brands, and startups, including L'Oréal across three divisions, Hasbro across three successive programs, and Godiva across eight years of seasonal collections. Approved supplier to L'Oréal (10-year tenure) and Johnson &amp; Johnson. Multi-year relationships with senior decision-makers produced brand systems, original intellectual property, and consumer experiences, and brought them to market. In two cases (L'arganique Beauté, Casabella), contributed to the conditions for acquisition.</p>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0">
+<div style="background:var(--white);padding:.85rem;text-align:center"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:700;display:block;color:var(--ink)">15-year</span><span style="font-size:.58rem;color:var(--mid);letter-spacing:.03em;display:block;margin-top:.2rem">practice</span></div>
+<div style="background:var(--white);padding:.85rem;text-align:center"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:700;display:block;color:var(--ink)">40+</span><span style="font-size:.58rem;color:var(--mid);letter-spacing:.03em;display:block;margin-top:.2rem">brand programs led</span></div>
+<div style="background:var(--white);padding:.85rem;text-align:center"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:700;display:block;color:var(--ink)">10–130+</span><span style="font-size:.58rem;color:var(--mid);letter-spacing:.03em;display:block;margin-top:.2rem">SKUs per program</span></div>
+<div style="background:var(--white);padding:.85rem;text-align:center"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:700;display:block;color:var(--ink)">6+</span><span style="font-size:.58rem;color:var(--mid);letter-spacing:.03em;display:block;margin-top:.2rem">year anchor partnerships<br>L’Oréal · Godiva · L’arganique</span></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-top:none;margin:-1px 0 1.5rem">
+<div style="background:var(--white);padding:.85rem;text-align:center"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:700;display:block;color:var(--ink)">2</span><span style="font-size:.58rem;color:var(--mid);letter-spacing:.03em;display:block;margin-top:.2rem">client brand acquisitions<br>L’arganique Beauté · Casabella</span></div>
+<div style="background:var(--white);padding:.85rem;text-align:center"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:700;display:block;color:var(--ink)">2</span><span style="font-size:.58rem;color:var(--mid);letter-spacing:.03em;display:block;margin-top:.2rem">approved supplier status<br>L’Oréal · Johnson &amp; Johnson</span></div>
+<div style="background:var(--white);padding:.85rem;text-align:center"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:700;display:block;color:var(--ink)">7</span><span style="font-size:.58rem;color:var(--mid);letter-spacing:.03em;display:block;margin-top:.2rem">touchpoints: packaging, retail,<br>web, email, social, print, video</span></div>
+</div>
+
+<div style="background:#FBF7EC;border-top:1px solid #D4B95E;border-bottom:1px solid #D4B95E;padding:1rem 2rem;text-align:center"><p style="font-family:var(--serif);font-size:.95rem;color:#8B7225;line-height:1.7;margin:0">Developed a codified approach to brand campaigns, design systems, and execution.</p></div>
+
+
+</section>
+
+
+
+<!-- FOCUS -->
+<section class="sec" id="focus" style="margin:0 -2rem;padding:3rem 2rem">
+<div class="ey"><div class="ey-bar"></div><span>Focus</span></div>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#E8E0E5;margin-top:1.25rem">
+<div style="background:#FBF3F2;padding:1.5rem;border-top:3px solid #DDBDBA">
+<div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#B5706A;margin-bottom:.6rem">Beauty</div>
+<p style="font-size:.78rem;color:var(--mid);line-height:1.8;margin:0">Daring expressions of color, with meticulous attention to image-making, developed for fashion, fragrance, cosmetics, body care, and consumer brands. The work was designed to attract the eye and suggest joy, serenity, and escape.</p>
+</div>
+<div style="background:#F8FAFA;padding:1.5rem;border-top:3px solid #C9D5D4">
+<div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#2A4A45;margin-bottom:.6rem">Corporate</div>
+<p style="font-size:.78rem;color:var(--mid);line-height:1.8;margin:0">Information translated for clarity and visual impact. Annual reports, brochures, websites, and public relations materials were designed to make facts easier to locate, understand, and use.</p>
+</div>
+<div style="background:#F3F7FA;padding:1.5rem;border-top:3px solid #BDD0DB">
+<div style="font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#4F84A6;margin-bottom:.6rem">Kids</div>
+<p style="font-size:.78rem;color:var(--mid);line-height:1.8;margin:0">Learning environments designed as complete experiences. In classrooms, museums, retail, and product design, the work was shaped to capture attention, engage imagination, and support discovery.</p>
+</div>
+</div>
+
+<!-- SELECTED WORK (gold collapsible) -->
+<div style="margin:2.5rem 0;padding:3rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)" id="sel-work" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.25rem;background:#C4A43A;cursor:pointer">
+<div>
+<div style="font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--white)">Selected Work</div>
+<div style="font-size:.55rem;color:#F5EDDA;margin-top:.1rem">Five brands. Case studies forthcoming.</div>
+</div>
+<svg viewBox="0 0 16 16" style="width:16px;height:16px;color:var(--white);transition:transform .2s" class="sw-chev"><polyline points="3 6 8 11 13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<div class="sw-body" style="padding:1rem 1.25rem;border-top:1px solid #B8960C">
+<div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory">
+<div style="flex:0 0 150px;scroll-snap-align:start"><div style="width:100%;aspect-ratio:3/4;background:#E8E8E8;border-radius:2px"></div><div style="font-family:var(--serif);font-size:.72rem;font-weight:700;color:var(--ink);margin-top:.4rem">Godiva</div><div style="font-size:.5rem;color:var(--mid);margin-top:.1rem;line-height:1.4">Seasonal gift and packaging collections</div></div>
+<div style="flex:0 0 150px;scroll-snap-align:start"><div style="width:100%;aspect-ratio:3/4;background:#E8E8E8;border-radius:2px"></div><div style="font-family:var(--serif);font-size:.72rem;font-weight:700;color:var(--ink);margin-top:.4rem">L'arganique Beauté</div><div style="font-size:.5rem;color:var(--mid);margin-top:.1rem;line-height:1.4">Luxury fragrance campaign and e-commerce</div></div>
+<div style="flex:0 0 150px;scroll-snap-align:start"><div style="width:100%;aspect-ratio:3/4;background:#E8E8E8;border-radius:2px"></div><div style="font-family:var(--serif);font-size:.72rem;font-weight:700;color:var(--ink);margin-top:.4rem">L'Oréal</div><div style="font-size:.5rem;color:var(--mid);margin-top:.1rem;line-height:1.4">Multicultural beauty packaging and product development</div></div>
+<div style="flex:0 0 150px;scroll-snap-align:start"><div style="width:100%;aspect-ratio:3/4;background:#E8E8E8;border-radius:2px"></div><div style="font-family:var(--serif);font-size:.72rem;font-weight:700;color:var(--ink);margin-top:.4rem">Casabella</div><div style="font-size:.5rem;color:var(--mid);margin-top:.1rem;line-height:1.4">Artist collection graphic identity</div></div>
+<div style="flex:0 0 150px;scroll-snap-align:start"><div style="width:100%;aspect-ratio:3/4;background:#E8E8E8;border-radius:2px"></div><div style="font-family:var(--serif);font-size:.72rem;font-weight:700;color:var(--ink);margin-top:.4rem">Hasbro</div><div style="font-size:.5rem;color:var(--mid);margin-top:.1rem;line-height:1.4">Playskool retail and product design</div></div>
+</div>
+<div style="font-size:.52rem;color:var(--accent);text-align:right;letter-spacing:.04em;margin-top:-.25rem">Scroll →</div>
+</div>
+</div>
+<style>.sw-body{display:none!important}[aria-expanded="true"] .sw-body{display:block!important}[aria-expanded="true"] .sw-chev{transform:rotate(180deg)}</style>
+
+<!-- BBW ON-STAFF BLOCK -->
+<div style="border-left:3px solid #D0C0CC;background:#FAFAFA;padding:1.25rem 1.25rem 0;margin:1.5rem 2rem 1rem 2rem">
+
+<div style="font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#9B7A8E;margin-bottom:.75rem">On-staff corporate design leadership before building Joshi Design</div>
+
+<p style="font-size:.72rem;color:var(--mid);line-height:1.8;margin:0 0 1rem">Prior to building Joshi Design in 2007, Jeannie Joshi held an in-house corporate design leadership role at Bath &amp; Body Works, part of L Brands, Inc., where she led design direction and brand management across four flagship beauty brands. Her work included the Wexler skincare line for <a href="https://profiles.mountsinai.org/patricia-s-wexler" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent)">Dr. Patricia Wexler</a>, a prominent New York City dermatologist known for cosmetic dermatology, as well as Henri Bendel luxury fragrance and body care collection, Les Couvent des Minimes, L'Occitane's private-label personal care collection, and the American Girl beauty collection.</p>
+
+<!-- Wexler collapsible -->
+<div style="margin:0 -1.25rem;cursor:pointer" id="wex-strip" aria-expanded="false" onclick="event.stopPropagation();this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
+<div style="background:#5C2446;padding:.65rem 1.25rem;display:flex;justify-content:space-between;align-items:center">
+<div>
+<div style="font-family:var(--serif);font-size:.82rem;font-weight:700;color:var(--white)">Wexler</div>
+<div style="font-size:.55rem;color:#D0C0CC;margin-top:.1rem">Skincare collection. Case study forthcoming.</div>
+</div>
+<svg viewBox="0 0 16 16" style="width:14px;height:14px;color:#D0C0CC;transition:transform .2s" class="wex-chev"><polyline points="3 6 8 11 13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<div class="wex-body" style="background:#5C2446;padding:0 1.25rem .75rem;text-align:center">
+<div style="width:80px;height:96px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:2px;margin:0 auto"></div>
+</div>
+</div>
+<style>.wex-body{display:none!important}[aria-expanded="true"] .wex-body{display:block!important}[aria-expanded="true"] .wex-chev{transform:rotate(180deg)}</style>
+
+<!-- Parsons -->
+<div style="padding:1rem 0 1.25rem">
+<div style="font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#9B7A8E;margin-bottom:.35rem">Parsons, The New School for Design, MFA Design and Technology, 2008</div>
+<p style="font-size:.7rem;color:var(--mid);line-height:1.65;margin:0">Following her Bath &amp; Body Works tenure, she continued advising on the Wexler collection briefly while beginning full-time graduate study at Parsons, The New School for Design, and building the studio practice. She completed her MFA in Design and Technology in 2008, and that training went on to shape the studio's interdisciplinary approach, bridging physical and digital design seamlessly.</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- SELECTED IMPACT -->
+<section class="sec" id="impact">
+<div class="ey"><div class="ey-bar"></div><span>Selected Impact</span></div>
+
+<div class="cd" aria-expanded="false" role="region">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Global beauty, multicultural</span><span class="cd-c">(L'Oréal)</span></div>
+<div class="cd-s">Packaging, conceptual product development, brand expression, and strategic imagery across three divisions.</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<p class="cd-txt">The work began with SoftSheen-Carson and expanded to Multicultural Beauty and the L'Oréal Kids World personal care range, developing category programs, visual systems, and packaging concepts used to evaluate direction.</p>
+</div></div>
+
+<div class="cd" aria-expanded="false" role="region">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Founder-led luxury fragrance</span><span class="cd-c">(L'arganique Beauté)</span></div>
+<div class="cd-s">Brand strategy, creative direction, campaign development, packaging, strategic imagery, digital flagship, and D2C integration across a six-year partnership.</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<p class="cd-txt">Worked as the founder's right hand in shaping the brand from a private-label product into a business that achieved a successful acquisition. The work supported placements at the Emmy Awards and Critics' Choice Awards, and the hero fragrance won Best New Premium Fragrance at the Pure Beauty Global Awards three years in a row. Exclusive retail partnership with The Shops at Ritz-Carlton.</p>
+<div class="acq">Successful acquisition</div>
+</div></div>
+
+<div class="cd" aria-expanded="false" role="region">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Premium confectionery</span><span class="cd-c">(Godiva)</span></div>
+<div class="cd-s">Seasonal packaging, original hand-drawn illustration, and gift collection development.</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<p class="cd-txt">Created packaging and original artwork for seasonal gift collections across an eight-year partnership, helping refresh the brand's presentation for recurring holiday programs.</p>
+</div></div>
+
+<div class="cd" aria-expanded="false" role="region">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Family-owned housewares</span><span class="cd-c">(Casabella)</span></div>
+<div class="cd-s">Original artwork, surface pattern design, packaging, product graphics, website design, and strategic imagery.</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<p class="cd-txt">Developed an original artist collection for the product line, including surface patterns, packaging systems, large-format product graphics, and extensions across cleaning tools. The collection replaced licensed Keith Haring graphics with brand-owned intellectual property. Featured in Graphic Design USA and Home Furnishings News. Worldwide retail rollout. <strong>Highest revenue in five years.</strong></p>
+<div class="acq">Acquired by Bradshaw International</div>
+</div></div>
+
+<div class="cd" aria-expanded="false" role="region">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Global toys + retail</span><span class="cd-c">(Hasbro)</span></div>
+<div class="cd-s">Brand strategy, retail environment concepts, modular fixtures, visual merchandising, and strategic imagery across three successive programs.</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<p class="cd-txt">Designed modular retail environments and merchandising systems for Playskool, <strong>shown at the Hong Kong International Toy Fair and adopted for nationwide deployment.</strong> The work expanded across Tonka, Playskool, and a combined Vehicles Merchandising program that brought Tonka, Transformers, and Star Wars together within a single retail aisle.</p>
+</div></div>
+
+<div class="cd" aria-expanded="false" role="region">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">National retail, digital</span><span class="cd-c">(Kohl's)</span></div>
+<div class="cd-s">Digital strategy, content architecture, interface design, and on-screen brand expression for an in-store touchscreen beauty experience.</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<p class="cd-txt">Shaped a self-service digital experience for four prestige brands: American Beauty, Flirt, Good Skin, and Grassroots, uniting distinct visual identities within a shared navigational system. Deployed at the Short Hills flagship in New Jersey.</p>
+</div></div>
+
+<div class="cd" aria-expanded="false" role="region">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Global personal care</span><span class="cd-c">(Carefree, Johnson &amp; Johnson)</span></div>
+<div class="cd-s">Packaging restage, brand system definition, strategic imagery, and brand book for a global product line.</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<p class="cd-txt">Co-led a complete packaging restage with the in-house creative team, delivering updated pack design across the range and a brand book documenting the brand system and imagery. <strong>The work moved to market without consumer testing, based on the strength of the design.</strong></p>
+</div></div>
+
+<div class="cd" aria-expanded="false" role="region">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Food + gifting</span><span class="cd-c">(Pepperidge Farm)</span></div>
+<div class="cd-s">Brand strategy, seasonal packaging, structural and graphic concepts, and production for holiday programs.</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<p class="cd-txt">Created holiday gift packaging for the Signature Cookie Collection. The first season established the visual language for a single gift box; the second expanded to three SKUs and a cohesive line look across the holiday range.</p>
+</div></div>
+</section>
+
+<!-- PARTNERSHIPS -->
+<section class="sec" id="partnerships">
+<div class="ey"><div class="ey-bar"></div><span>Client partnerships</span></div>
+<table class="pt"><thead><tr><th>Vertical</th><th>Client</th><th>Engagement</th></tr></thead><tbody>
+<tr><td>Beauty</td><td>L’Oréal</td><td>Concepts, imagery, and packaging for category programs across three divisions spanning nine years</td></tr>
+<tr><td>Confectionery</td><td>Godiva</td><td>Seasonal gift packaging over an eight-year partnership</td></tr>
+<tr><td>Luxury fragrance</td><td>L’arganique Beauté</td><td>Brand narrative, systems, and Ritz-Carlton retail over six years; brand acquired</td></tr>
+<tr><td>Toys + retail</td><td>Hasbro</td><td>Retail environments and merchandising across three programs</td></tr>
+<tr><td>Personal care</td><td>Johnson &amp; Johnson</td><td>Packaging restage and brand book for Carefree</td></tr>
+<tr><td>Housewares</td><td>Casabella</td><td>Original artist collection with worldwide rollout; brand acquired</td></tr>
+<tr><td>Retail</td><td>Kohl’s</td><td>In-store digital beauty experience, via agency partner</td></tr>
+<tr><td>Food + gifting</td><td>Pepperidge Farm</td><td>Three seasonal programs</td></tr>
+</tbody></table>
+</section>
+
+<!-- HOW I WORK -->
+<section class="sec" id="methodology">
+<div class="ey"><div class="ey-bar"></div><span>Methodology</span></div>
+
+<div class="ax-w"><div class="ax-d"><span class="axlb t">audience</span><div class="axl axv t"></div><div class="ax-ctr"><div class="ax-inn"></div></div><div class="axl axh"></div><span class="axlb r">context</span><div class="axl axv b"></div><span class="axlb b">intent</span></div></div>
+
+<p class="sdesc" style="margin-top:1.5rem">Designing for complexity: problem framing, vision building, exploration.</p>
+
+<div style="margin:1.5rem 0 2rem">
+
+<div style="font-family:var(--sans);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.75rem">The Charted Path</div>
+
+<div style="display:flex;gap:0;margin-bottom:.25rem">
+<div style="flex:1;padding:1rem 1.25rem;background:#FBF3F2;border-left:3px solid #DDBDBA;position:relative">
+<div style="font-family:var(--serif);font-size:.95rem;color:var(--ink)">Frame the Problem</div>
+<p style="font-size:.75rem;color:var(--mid);line-height:1.7;margin:.5rem 0 0">Futures thinking, systems thinking.<br>Hypothesis building.</p>
+<div style="position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:#DDBDBA;font-size:.85rem">→</div>
+</div>
+<div style="flex:1;padding:1rem 1.25rem;background:#F8FAFA;border-left:1px solid #E8E0E5;position:relative">
+<div style="font-family:var(--serif);font-size:.95rem;color:var(--ink)">Build the Vision</div>
+<p style="font-size:.75rem;color:var(--mid);line-height:1.7;margin:.5rem 0 0">Storytelling.<br>The future we want. How might we get there?</p>
+<div style="position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:#C9D5D4;font-size:.85rem">→</div>
+</div>
+<div style="flex:1;padding:1rem 1.25rem;background:#F3F7FA;border-left:1px solid #E8E0E5">
+<div style="font-family:var(--serif);font-size:.95rem;color:var(--ink)">Discovery and Exploration</div>
+<p style="font-size:.75rem;color:var(--mid);line-height:1.7;margin:.5rem 0 0">Research, ethnographic probes.<br>This is how we could get there.</p>
+</div>
+</div>
+
+<div style="height:1px;background:linear-gradient(to right,#DDBDBA,#C9D5D4,#BDD0DB);margin:.75rem 0"></div>
+
+<div style="font-family:var(--sans);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--sub);margin-bottom:.75rem">The Approach</div>
+<p style="font-size:.75rem;color:var(--mid);line-height:1.7;margin:0 0 .75rem">Scope adjusts to the client. Some engagements are strategy only; others move through all three phases.</p>
+
+<div style="display:flex;gap:0">
+<div style="flex:1;padding:1rem 1.25rem;border-left:3px solid #DDBDBA">
+<div style="font-family:var(--serif);font-size:.95rem;color:var(--ink)">Envision</div>
+<div style="font-size:.68rem;color:var(--mid);margin-top:.3rem;letter-spacing:.04em">understand</div>
+<p style="font-size:.75rem;color:var(--mid);line-height:1.7;margin:.5rem 0 0">Key project questions: what is the story? Ideas, analysis (research), portfolio of options.</p>
+</div>
+<div style="flex:1;padding:1rem 1.25rem;border-left:1px solid #E8E0E5">
+<div style="font-family:var(--serif);font-size:.95rem;color:var(--ink)">Experience</div>
+<div style="font-size:.68rem;color:var(--mid);margin-top:.3rem;letter-spacing:.04em">adapt</div>
+<p style="font-size:.75rem;color:var(--mid);line-height:1.7;margin:.5rem 0 0">Branding or product experience. Develop brand/design brief. Market content (strategy). Technology selection. Prototype.</p>
+</div>
+<div style="flex:1;padding:1rem 1.25rem;border-left:1px solid #E8E0E5">
+<div style="font-family:var(--serif);font-size:.95rem;color:var(--ink)">Delivery</div>
+<div style="font-size:.68rem;color:var(--mid);margin-top:.3rem;letter-spacing:.04em">appropriate</div>
+<p style="font-size:.75rem;color:var(--mid);line-height:1.7;margin:.5rem 0 0">Assets, guidelines, specifications, and partner coordination. Hand off to the client's team.</p>
+</div>
+</div>
+
+</div>
+
+<div class="scroll-wrap scroll-fade" style="overflow-x:auto;margin-top:1rem">
+<table class="mx">
+<thead><tr><th></th><th>Envision</th><th>Experience</th><th>Delivery</th></tr></thead>
+<tbody>
+<tr><td>Customer + market</td><td>Who are they, and what do they need?</td><td>Design for how they see, shop, and choose.</td><td>Approved direction for the market.</td></tr>
+<tr><td>Technology + behavior</td><td>How do people discover, try, and buy?</td><td>Choose the right format and medium. Prototype to prove it works.</td><td>Specifications and partner coordination for the build.</td></tr>
+<tr><td>Brand + story</td><td>What should this brand promise, and what role should it play?</td><td>Design the brand system and campaign across packaging, retail, digital, and communications.</td><td>Finished assets and guidelines.</td></tr>
+<tr><td>Competition + positioning</td><td>Who else is here, and where do we stand?</td><td>Own territory the competition does not.</td><td>Shelf-ready and distinct.</td></tr>
+<tr><td>Operations + architecture</td><td>What needs to be in place to make this work?</td><td>Verify the design can be manufactured at scale.</td><td>Hand off to the client's team.</td></tr>
+<tr style="border-top:2px solid var(--rule)"><td style="font-weight:600">Outcome</td><td style="font-weight:600;color:var(--accent)">Understand</td><td style="font-weight:600;color:var(--accent)">Adapt</td><td style="font-weight:600;color:var(--accent)">Appropriate</td></tr>
+</tbody>
+<tfoot><tr><td colspan="4" style="background:var(--phase3);color:var(--ink);text-align:center;font-weight:500;font-size:.7rem;letter-spacing:.06em">Design management runs continuously across all phases.</td></tr></tfoot>
+</table>
+</div>
+</section>
+
+
+
+
+<!-- SELECTED PROGRAMS -->
+<section class="sec" id="programs">
+<div style="margin:0" id="sel-programs" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.25rem;background:#C4A43A;cursor:pointer">
+<div>
+<div style="font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--white)">Selected Programs</div>
+<div style="font-size:.55rem;color:#F5EDDA;margin-top:.1rem">Six engagements by category, approach, and outcome</div>
+</div>
+<svg viewBox="0 0 16 16" style="width:16px;height:16px;color:var(--white);transition:transform .2s" class="sp-chev"><polyline points="3 6 8 11 13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<div class="sp-body" style="padding:1rem 1.25rem;border-top:1px solid #B8960C">
+
+<div style="border-left:3px solid #C4A43A;padding:.75rem 1rem;margin-bottom:.75rem;background:#FBF7EC">
+<div style="font-size:.75rem;font-weight:600;color:#8B7225">Mass-market hair care, packaging</div>
+<div style="font-size:.62rem;color:var(--mid);margin-top:.1rem">Six concepts across four directions</div>
+<div style="display:flex;gap:6px;margin-top:.4rem"><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Discovery</div><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Design</div><div style="padding:.15rem .5rem;background:#E8E0E5;font-size:.48rem;color:var(--mid);letter-spacing:.04em">—</div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:.6rem">
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Frame the Problem</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Translate the completed brand equity study into clear, shelf-ready packaging direction.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Build the Vision</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Developed six packaging concepts across four levels of ambition, from refining existing equities to a full rebrand.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Discovery and Exploration</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Evaluated each direction across the full product range to assess flexibility and consistency.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Delivery</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Analyzed equity research and competitive landscape to identify credible brand evolution opportunities, outlining options and tradeoffs for executive decision-making.</div></div>
+</div></div>
+
+<div style="border-left:3px solid #C4A43A;padding:.75rem 1rem;margin-bottom:.75rem;background:#FBF7EC">
+<div style="font-size:.75rem;font-weight:600;color:#8B7225">Four prestige beauty brands, interactive digital kiosk</div>
+<div style="font-size:.62rem;color:var(--mid);margin-top:.1rem">Interface and content design</div>
+<div style="display:flex;gap:6px;margin-top:.4rem"><div style="padding:.15rem .5rem;background:#E8E0E5;font-size:.48rem;color:var(--mid);letter-spacing:.04em">—</div><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Design</div><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Deliver</div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:.6rem">
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Frame the Problem</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Create a shared digital self-service kiosk that allows four prestige beauty brands to remain distinct within a unified platform.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Build the Vision</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Developed two concepts: one extending the current framework and another introducing a new in-store interaction model.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Discovery and Exploration</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Designed four brand experiences within a single system, ensuring each was recognizably different yet structurally consistent.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Delivery</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Assessed the existing interface and retail context, then defined an experience where each brand maintains its presence within a shared architecture.</div></div>
+</div></div>
+
+<div style="border-left:3px solid #C4A43A;padding:.75rem 1rem;margin-bottom:.75rem;background:#FBF7EC">
+<div style="font-size:.75rem;font-weight:600;color:#8B7225">Children’s toy brand, modular retail environment</div>
+<div style="font-size:.62rem;color:var(--mid);margin-top:.1rem">Nationwide deployment</div>
+<div style="display:flex;gap:6px;margin-top:.4rem"><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Discovery</div><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Design</div><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Deliver</div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:.6rem">
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Frame the Problem</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Define a retail environment that engages children and builds trust and clarity for adults.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Build the Vision</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Developed two concepts for a modular system using sustainable materials and interactive elements, scalable for national rollout.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Discovery and Exploration</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Designed the environment to enable fabrication partners to build and deploy it from a single store to nationwide locations.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Delivery</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Anchored the system in the brand’s learning-through-play positioning and provided fully engineered blueprints for national deployment.</div></div>
+</div></div>
+
+<div style="border-left:3px solid #C4A43A;padding:.75rem 1rem;margin-bottom:.75rem;background:#FBF7EC">
+<div style="font-size:.75rem;font-weight:600;color:#8B7225">Three global toy franchises, retail aisle merchandising</div>
+<div style="font-size:.62rem;color:var(--mid);margin-top:.1rem">Three progressive waves from incremental to transformational</div>
+<div style="display:flex;gap:6px;margin-top:.4rem"><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Discovery</div><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Design</div><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Deliver</div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:.6rem">
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Frame the Problem</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Ensure three franchises with distinct audiences and identities can coexist in a single aisle without competing for attention.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Build the Vision</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Outlined three progressive waves: optimizing the current set, adding dimensional signage and floor elements, and introducing screens, sound, and lighting.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Discovery and Exploration</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Structured each wave to build on the previous, providing the client with clear, staged options for scope and investment.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Delivery</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Evaluated each brand’s identity and audience, then developed an aisle system where all three maintain a clear, non-competing presence.</div></div>
+</div></div>
+
+<div style="border-left:3px solid #C4A43A;padding:.75rem 1rem;margin-bottom:.75rem;background:#FBF7EC">
+<div style="font-size:.75rem;font-weight:600;color:#8B7225">Prestige nail care, brand redesign roadmap</div>
+<div style="font-size:.62rem;color:var(--mid);margin-top:.1rem">68 SKUs across nail lacquers, treatments, tools, and accessories</div>
+<div style="display:flex;gap:6px;margin-top:.4rem"><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Discovery</div><div style="padding:.15rem .5rem;background:#E8E0E5;font-size:.48rem;color:var(--mid);letter-spacing:.04em">—</div><div style="padding:.15rem .5rem;background:#E8E0E5;font-size:.48rem;color:var(--mid);letter-spacing:.04em">—</div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:.6rem">
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Frame the Problem</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Unify a prestige nail and body care portfolio, including lacquers, treatments, tools, and accessories, across multiple retail channels.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Build the Vision</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Conducted competitive and retail research, and developed three directions for a cohesive brand collection.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Discovery and Exploration</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Mapped the entire 68-SKU assortment as a unified brand system, allowing the client to preview the impact of a redesign before committing.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Delivery</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Provided a phased roadmap addressing manufacturing, prototypes, brand guidelines, and communications to inform the eventual redesign.</div></div>
+</div></div>
+
+<div style="border-left:3px solid #C4A43A;padding:.75rem 1rem;background:#FBF7EC">
+<div style="font-size:.75rem;font-weight:600;color:#8B7225">Private-label beauty and bath, brand identity and packaging</div>
+<div style="font-size:.62rem;color:var(--mid);margin-top:.1rem">65–80 SKUs across facial care, bath and body, fragrance, soap, and home</div>
+<div style="display:flex;gap:6px;margin-top:.4rem"><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Discovery</div><div style="padding:.15rem .5rem;background:#C4A43A;font-size:.48rem;color:var(--white);letter-spacing:.04em">Design</div><div style="padding:.15rem .5rem;background:#E8E0E5;font-size:.48rem;color:var(--mid);letter-spacing:.04em">—</div></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:.6rem">
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Frame the Problem</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Develop an identity and packaging system for a new organic beauty line in preparation for a national retail pitch.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Build the Vision</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Explored logo concepts and design across five categories: facial, bath and body, fragrance, soap, and home.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Discovery and Exploration</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Developed a unified brand system for 65–80 products, including secondary packaging as needed.</div></div>
+<div><div style="font-size:.52rem;color:#8B7225;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">Delivery</div><div style="font-size:.65rem;color:var(--mid);line-height:1.5">Reviewed the business plan to clarify commercial and storytelling needs, and recommended narrowing the initial pitch assortment to maximize impact.</div></div>
+</div></div>
+
+</div>
+</div>
+<style>.sp-body{display:none!important}[aria-expanded="true"] .sp-body{display:block!important}[aria-expanded="true"] .sp-chev{transform:rotate(180deg)}</style>
+</section>
+
+<!-- DEPTH OF ENGAGEMENT -->
+<section class="sec" id="depth">
+<div class="ey" ><div class="ey-bar"></div><span>Depth of engagement by client</span></div>
+<div class="scroll-wrap scroll-fade" style="overflow-x:auto">
+<table class="mx"><thead><tr><th></th><th>L'Oréal</th><th>L'arganique</th><th>Casabella</th><th>Hasbro</th><th>Godiva</th><th>J&amp;J</th><th>Kohl's</th><th>Pepperidge Farm</th></tr></thead><tbody>
+<tr><td>Positioning + market framing</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td></td><td class="dot">●</td><td class="dot">●</td><td></td></tr>
+<tr><td>Concept + pipeline work</td><td class="dot">●</td><td class="dot">●</td><td></td><td class="dot">●</td><td></td><td class="dot">●</td><td class="dot">●</td><td></td></tr>
+<tr><td>Brand systems + packaging</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td></td><td class="dot">●</td><td class="dot">●</td><td></td><td class="dot">●</td></tr>
+<tr><td>Strategic imagery</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td></td><td class="dot">●</td><td></td><td></td><td></td></tr>
+<tr><td>Consumer experience</td><td></td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td></td><td></td><td class="dot">●</td><td></td></tr>
+<tr><td>Final delivery</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td><td class="dot">●</td></tr>
+</tbody></table>
+</div>
+</section>
+
+
+
+
+<!-- RECOGNITION — right after Impact -->
+<section class="sec" id="recognition" style="background:#FDF9F8;margin:0 -2rem;padding:3rem 2rem">
+<div class="ey"><div class="ey-bar"></div><span>Recognition</span></div>
+
+<div class="rh">Awards</div>
+<div class="rr"><span class="rt">3× Best New Premium Fragrance, Pure Beauty Global Awards, L'arganique Beauté (luxury fragrance)</span></div>
+
+<div class="rh">Press + client commentary</div>
+<div class="cd" aria-expanded="false" role="region" style="margin-top:.5rem">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Graphic Design USA · Home Furnishing News</span></div>
+<div class="cd-s">Casabella Artist Collection coverage</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+<div class="ctx-warm ctx" style="margin:0 0 1rem"><p>"The new pattern is perfect for Casabella: it's very strategic and reinforces our heritage of being a trend setter in the industry for colors, patterns and product design. It also makes everyone smile when they see it, and that is exactly what you would expect from Casabella."</p><p class="cite">— Casabella</p></div>
+<p class="cd-txt">The creative director and team selected a striped pattern "for its movement and style" and dubbed it "The Artist Collection."</p>
+<div class="ctx-warm ctx" style="margin:1rem 0 0"><p>"Saturated, high-spectrum/HD colors will appeal to millennials as well as other demographic groups. While these patterns are a big trend in beauty packaging, Casabella was smart to capitalize on this for their niche."</p><p class="cite">— Graphic Design USA</p></div>
+</div></div>
+
+<div class="cd" aria-expanded="false" role="region" style="margin-top:.5rem">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Beauty Packaging Magazine</span></div>
+<div class="cd-s">Co-presented at Health Beauty Association Global</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b"><div class="ctx-warm ctx" style="margin:0"><p>"Luxury brands are master storytellers, their new offerings have us hooked before we are even present... they take us on a journey, engaging the senses, creating memories, leaving their footprint, integrating the brand into our lifestyles."</p><p class="cite">— Jeannie Joshi, Beauty Packaging Magazine</p></div></div>
+</div>
+
+<div class="rh">Published thought leadership</div>
+<div class="ctx-warm ctx" style="margin:.75rem 0"><p>"People are searching for more unique experiences, products with purpose, and design that is not just good, but also for the greater good."</p><p class="cite">— "Luxury Newly Defined," Beauty Packaging Magazine</p></div>
+<div class="ctx-warm ctx" style="margin:.75rem 0"><p>"How might spirituality contribute meaningfully to beauty and wellness? I propose a shift in perspective, an enlightened approach — with less attention paid to the external and more to the internal."</p><p class="cite">— "Transcendent Beauty," Global Cosmetic Industry</p></div>
+</section>
+
+<!-- APPENDIX -->
+<section class="sec" id="appendix" style="border-top:2px solid var(--rule)">
+<div style="text-align:center;margin-bottom:2rem"><span style="font-family:var(--serif);font-size:1.4rem;color:var(--ink);font-weight:400;letter-spacing:.04em">Appendix</span></div>
+
+<!-- PRACTICE (appendix) -->
+
+<div class="ey" style="margin-top:2.5rem"><div class="ey-bar"></div><span>How the work happened</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:0;margin:1rem 0;border:1px solid #E8E0E5">
+<div style="flex:1 1 33%;padding:.65rem 1rem;background:#FDF8F7;border-right:1px solid #E8E0E5;min-width:200px"><p style="font-size:.7rem;color:var(--ink);line-height:1.55;margin:0">The client's business strategy is where we start</p></div>
+<div style="flex:1 1 33%;padding:.65rem 1rem;background:#F9F7F8;border-right:1px solid #E8E0E5;min-width:200px"><p style="font-size:.7rem;color:var(--ink);line-height:1.55;margin:0">Committed to the brand in an anthropological sense, becoming participant-observers</p></div>
+<div style="flex:1 1 33%;padding:.65rem 1rem;background:#F7F9FB;min-width:200px"><p style="font-size:.7rem;color:var(--ink);line-height:1.55;margin:0">The discovery process of learning a client's needs, calling on talented consultants when needed</p></div>
+<div style="flex:1 1 33%;padding:.65rem 1rem;background:#F7F9FB;border-right:1px solid #E8E0E5;border-top:1px solid #E8E0E5;min-width:200px"><p style="font-size:.7rem;color:var(--ink);line-height:1.55;margin:0">Harmonizing the analytic and creative</p></div>
+<div style="flex:1 1 33%;padding:.65rem 1rem;background:#FDF8F7;border-right:1px solid #E8E0E5;border-top:1px solid #E8E0E5;min-width:200px"><p style="font-size:.7rem;color:var(--ink);line-height:1.55;margin:0">Translating the product's promise into a visual campaign that connects faster and more deeply than words alone</p></div>
+<div style="flex:1 1 33%;padding:.65rem 1rem;background:#F9F7F8;border-top:1px solid #E8E0E5;min-width:200px"><p style="font-size:.7rem;color:var(--ink);line-height:1.55;margin:0">Creating an elegant solution that speaks to the intended consumer in all dimensions</p></div>
+</div>
+
+
+
+
+
+
+<!-- INDUSTRY CONTRIBUTIONS (appendix) -->
+<div class="cd" aria-expanded="false" role="region" style="margin-top:2.5rem">
+<div class="cd-h" tabindex="0" onclick="toggleCard(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
+<div><span class="cd-t">Industry contributions</span></div>
+<div class="cd-s">Speaking, jury and advisory, press, editorial</div>
+<span class="cd-chevron"><svg viewBox="0 0 16 16"><polyline points="3 6 8 11 13 6"/></svg></span>
+</div>
+<div class="cd-b">
+
+<div style="margin-bottom:1rem"><div style="font-size:.68rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Speaking</div>
+<div class="rr"><span class="rt">Keynote · Health Beauty Association Global</span><span class="rt">Keynote · Cosmetic Industry Buyers &amp; Suppliers</span><span class="rt">Presenter · Luxe Pack New York</span><span class="rt">Panel · MD&amp;M East, Collaborative Robots</span><span class="rt">Panel · ESC Boston, Smart Manufacturing</span><span class="rt">Panel · Packaging Digest</span></div></div>
+
+<div style="margin-bottom:1rem"><div style="font-size:.68rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Jury + advisory</div>
+<div class="rr"><span class="rt">BeautyMatter NEXT Awards, Jury</span><span class="rt">The Dieline Awards, Jury</span><span class="rt">INNOCOS, Advisory, Brand Innovation</span></div></div>
+
+<div style="margin-bottom:1rem"><div style="font-size:.68rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Featured in</div>
+<div class="rr"><span class="rt">Graphic Design USA</span><span class="rt">Home Furnishing News</span><span class="rt">Beauty Packaging Magazine</span><span class="rt">Global Cosmetic Industry</span></div></div>
+
+<div><div style="font-size:.68rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Editorial contributions</div>
+<div class="rr"><span class="rt">Global Cosmetic Industry, "Transcendent Beauty"</span><span class="rt">Beauty Packaging, "Luxury Newly Defined"</span><span class="rt">Beauty Packaging, "Setting Forth New Aesthetics"</span><span class="rt">Beauty Packaging, "Borderless Design"</span><span class="rt">Beauty Packaging, "Out of the Box Designs"</span><span class="rt">BeautyMatter, "Untitled, Unbranded, Unfinished, Unfiltered"</span><span class="rt">BeautyMatter, "Idea Therapy: New Magic Words"</span><span class="rt">BeautyMatter, "From Luxe Niche to Personal Care"</span></div></div>
+
+</div></div>
+
+
+</section>
+
+
+
+
+</div>
+
+<footer style="border-top:1px solid var(--rule);padding:2rem;text-align:center;margin-top:0;max-width:860px;margin-left:auto;margin-right:auto">
+<div style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem">Jeannie Joshi</div>
+<div style="font-size:.75rem;color:var(--mid);line-height:2">
+<a href="tel:9173061142" style="color:var(--mid);text-decoration:none">917-306-1142</a> · <a href="mailto:jjoshi@joshidesign.com" style="color:var(--mid);text-decoration:none">jjoshi@joshidesign.com</a>
+</div>
+</footer>
+
+<script>
+function toggleCard(el){var c=el.closest('.cd');var exp=c.getAttribute('aria-expanded')==='true';c.setAttribute('aria-expanded',exp?'false':'true')}
+function toggleMC(el){var c=el.closest('.mc');var exp=c.getAttribute('aria-expanded')==='true';c.setAttribute('aria-expanded',exp?'false':'true')}
+document.addEventListener('click',function(){var h=document.querySelector('.cd-hint');if(h)h.style.display='none'},{once:true});
+// Hide scroll hints after user scrolls any table
+document.querySelectorAll('.scroll-wrap').forEach(function(w){
+  w.addEventListener('scroll',function(){
+    w.classList.remove('scroll-wrap');
+    w.classList.remove('scroll-fade');
+  },{once:true});
+});
+</script>
+
+</body>
+</html>

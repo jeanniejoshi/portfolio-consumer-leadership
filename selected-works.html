@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Selected Work</title>
+<title>Jeannie Joshi | Selected Work</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -15,6 +15,14 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--sans);color:#222;background:var(--white);line-height:1.7;font-size:15px}
 .pg{max-width:860px;margin:0 auto;padding:2rem}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:0 2rem;overflow-x:auto;white-space:nowrap}
+.nav-in{max-width:860px;margin:0 auto;display:flex;align-items:center}
+.nav a{display:inline-block;padding:.75rem 1rem;font-size:.72rem;font-weight:500;letter-spacing:.06em;color:var(--sub);text-decoration:none;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav a:hover,.nav a:focus{color:var(--accent);border-bottom-color:var(--accent)}
+.nav a:first-child{color:var(--accent);font-weight:600;border:1px solid var(--accent);border-bottom-width:1px;border-radius:2px;padding:.4rem .85rem;margin-right:.5rem}
+.nav a:first-child:hover{background:var(--accent);color:var(--white);border-bottom-color:var(--accent)}
 
 .sec{padding:3rem 0}.sec+.sec{border-top:1px solid var(--rule)}
 .ey{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
@@ -164,13 +172,15 @@ body{font-family:var(--sans);color:#222;background:var(--white);line-height:1.7;
 </style>
 </head>
 <body>
+<nav class="nav" aria-label="Page sections"><div class="nav-in">
+<a href="index.html">← Consumer Leadership</a><a href="#godiva">Godiva</a><a href="#larganique">L'arganique</a><a href="#loreal">L'Oréal</a><a href="#casabella">Casabella</a><a href="#hasbro">Hasbro</a></div></nav>
 <div class="pg">
 
 <div class="ey"><div class="ey-bar"></div><span>Selected Work</span></div>
 
 
 <!-- ═══════════════════ GODIVA ═══════════════════ -->
-<div class="sec brand-godiva" style="border-top:none;padding-top:0">
+<div class="sec brand-godiva" id="godiva" style="border-top:none;padding-top:0">
   <div class="blabel">Godiva</div>
   <p class="bmeta">Seasonal packaging, original hand-drawn illustration, and gift collection development.</p>
   <p class="sdesc">Created packaging and original artwork for seasonal gift collections across an eight-year partnership, helping refresh the brand's presentation for recurring holiday programs.</p>
@@ -192,7 +202,7 @@ body{font-family:var(--sans);color:#222;background:var(--white);line-height:1.7;
 
 
 <!-- ═══════════════════ L'ARGANIQUE ═══════════════════ -->
-<div class="sec brand-larganique">
+<div class="sec brand-larganique" id="larganique">
   <div class="blabel">L'arganique Beauté</div>
   <p class="bmeta">Brand strategy, creative direction, campaign development, packaging, strategic imagery, digital flagship, and D2C integration across a six-year partnership.</p>
   <p class="sdesc">Worked as the founder's right hand in shaping the brand from a private-label product into a business that achieved a successful acquisition. The work supported placements at the Emmy Awards and Critics' Choice Awards, and the hero fragrance won Best New Premium Fragrance at the Pure Beauty Global Awards three years in a row. Exclusive retail partnership with The Shops at Ritz-Carlton.</p>
@@ -215,7 +225,7 @@ body{font-family:var(--sans);color:#222;background:var(--white);line-height:1.7;
 
 
 <!-- ═══════════════════ L'ORÉAL ═══════════════════ -->
-<div class="sec brand-loreal">
+<div class="sec brand-loreal" id="loreal">
   <div class="blabel">L'Oréal</div>
   <p class="bmeta">Packaging, conceptual product development, brand expression, and strategic imagery across three divisions spanning nine years.</p>
   <p class="sdesc">The work began with SoftSheen-Carson and expanded to Multicultural Beauty and the L'Oréal Kids World personal care range, developing category programs, visual systems, and packaging concepts used to evaluate direction.</p>
@@ -240,7 +250,7 @@ body{font-family:var(--sans);color:#222;background:var(--white);line-height:1.7;
 
 
 <!-- ═══════════════════ CASABELLA ═══════════════════ -->
-<div class="sec brand-casabella">
+<div class="sec brand-casabella" id="casabella">
   <div class="blabel">Casabella</div>
   <p class="bmeta">Original artwork, surface pattern design, packaging, product graphics, website design, and strategic imagery.</p>
   <p class="sdesc">Developed an original artist collection for the product line, including surface patterns, packaging systems, large-format product graphics, and extensions across cleaning tools. The collection replaced licensed Keith Haring graphics with brand-owned intellectual property. Featured in Graphic Design USA and Home Furnishings News. Worldwide retail rollout. Highest revenue in five years.</p>
@@ -257,7 +267,7 @@ body{font-family:var(--sans);color:#222;background:var(--white);line-height:1.7;
 
 
 <!-- ═══════════════════ HASBRO ═══════════════════ -->
-<div class="sec brand-hasbro">
+<div class="sec brand-hasbro" id="hasbro">
   <div class="blabel">Hasbro</div>
   <p class="bmeta">Brand strategy, retail environment concepts, modular fixtures, visual merchandising, and strategic imagery across three successive programs.</p>
   <p class="sdesc">Designed modular retail environments and merchandising systems for Playskool, shown at the Hong Kong International Toy Fair and adopted for nationwide deployment. The work expanded across Tonka, Playskool, and a combined Vehicles Merchandising program that brought Tonka, Transformers, and Star Wars together within a single retail aisle.</p>
@@ -278,7 +288,7 @@ body{font-family:var(--sans);color:#222;background:var(--white);line-height:1.7;
 
 
 <!-- ═══════════════════ BBW ═══════════════════ -->
-<div class="sec brand-bbw">
+<div class="sec brand-bbw" id="bbw">
   <div class="blabel">Bath & Body Works</div>
   <p class="bmeta">On-staff corporate design leadership before building Joshi Design.</p>
   <p class="sdesc">Prior to building Joshi Design in 2007, held an in-house corporate design leadership role at Bath & Body Works, part of L Brands, Inc., leading design direction and brand management across four flagship beauty brands: the Wexler skincare line, Henri Bendel luxury fragrance and body care collection, Les Couvent des Minimes, and the American Girl beauty collection.</p>

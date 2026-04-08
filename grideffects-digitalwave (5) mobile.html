@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selected Work</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#2A4A45;--mid:#3E6F68;--sub:#4F84A6;--accent:#B5706A;
+  --tint:#F7F4F5;--rule:#E8E0E5;--white:#FFFFFF;
+  --warm:#FBF7F6;--rose-t:#FBF3F2;--ice-t:#F7F4F5;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:#222;background:var(--white);line-height:1.7;font-size:15px}
+.pg{max-width:860px;margin:0 auto;padding:2rem}
+
+.sec{padding:3rem 0}.sec+.sec{border-top:1px solid var(--rule)}
+.ey{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
+.ey-bar{width:24px;height:2px;background:var(--accent)}
+.ey span{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.sdesc{font-size:.82rem;color:#333;margin-bottom:1.5rem;line-height:1.8}
+
+.blabel{font-family:var(--serif);font-size:1.1rem;color:var(--accent);margin-bottom:.25rem}
+.bmeta{font-size:.72rem;color:#333;margin-bottom:1.25rem;line-height:1.5}
+
+@keyframes shimmer{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Base cell */
+.ph{
+  border:none;border-radius:2px;
+  cursor:pointer;transition:transform .15s,box-shadow .15s;
+  animation:shimmer 8s ease-in-out infinite;
+}
+.ph:hover{transform:scale(1.02)}
+.ph-text{display:none}
+
+/* GODIVA — Pause: elegant, soft pinks, peach, warm cream */
+.brand-godiva .ph{
+  background-image:linear-gradient(135deg,
+    #FADADD 0%,#D4A87C 10%,#F5E6C8 20%,#E8907C 32%,
+    #F2D6CF 42%,#C4946C 52%,#FADADD 62%,#F0A08C 74%,
+    #F5ECD0 84%,#D4A87C 94%,#FADADD 100%);
+  background-size:600% 600%;
+}
+.brand-godiva .ph:hover{box-shadow:0 2px 16px rgba(208,160,140,.25)}
+
+/* L'ARGANIQUE — Golds: amber, champagne, honey, luxe */
+.brand-larganique .ph{
+  background-image:linear-gradient(135deg,
+    #F5ECD0 0%,#A07828 10%,#D4A84C 20%,#F0E4C0 32%,
+    #C49232 42%,#E8D5A8 52%,#8C6820 62%,#D4B870 74%,
+    #F5ECD0 84%,#C4943A 94%,#F5ECD0 100%);
+  background-size:600% 600%;
+}
+.brand-larganique .ph:hover{box-shadow:0 2px 16px rgba(196,148,58,.25)}
+
+/* L'ORÉAL — Digital Wave: magenta, purple, blue, bold beauty */
+.brand-loreal .ph{
+  background-image:linear-gradient(135deg,
+    #E0197A 0%,#D41968 12%,#7B2D8E 25%,#5C2D91 38%,
+    #0066CC 50%,#00A0C6 62%,#7B2D8E 75%,#E0197A 88%,#D41968 100%);
+  background-size:500% 500%;
+}
+.brand-loreal .ph:hover{box-shadow:0 2px 16px rgba(224,25,122,.2)}
+
+/* CASABELLA — Edgelands: dusty lavender, sage, stone, graphic cool */
+.brand-casabella .ph{
+  background-image:linear-gradient(135deg,
+    #C8B8A8 0%,#9878B0 12%,#A8B8A0 22%,#D4B0B8 34%,
+    #787878 44%,#B8A0C8 54%,#C8C0A0 64%,#9878B0 76%,
+    #D4B0B8 86%,#A8B8A0 94%,#C8B8A8 100%);
+  background-size:600% 600%;
+}
+.brand-casabella .ph:hover{box-shadow:0 2px 16px rgba(184,160,200,.2)}
+
+/* HASBRO — Encounter Culture: yellow, orange, warm red, green, playful */
+.brand-hasbro .ph{
+  background-image:linear-gradient(135deg,
+    #E8D120 0%,#F28C00 18%,#D41920 32%,#E84820 46%,
+    #6B8E23 58%,#00896C 72%,#F28C00 86%,#E8D120 100%);
+  background-size:500% 500%;
+}
+.brand-hasbro .ph:hover{box-shadow:0 2px 16px rgba(242,140,0,.2)}
+
+/* BBW — neutral warm */
+.brand-bbw .ph, .bbw-hold{
+  background-image:linear-gradient(135deg,#F5ECD0 0%,#F0E4D4 50%,#F5ECD0 100%);
+  background-size:400% 400%;animation:shimmer 10s ease-in-out infinite;
+}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(245,236,208,.92);z-index:200;display:none;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px)}
+.lb.on{display:flex}
+.lb-inner{border:none;border-radius:2px;max-width:90vw;max-height:85vh;position:relative;transition:width .2s,height .2s;
+  background-size:400% 400%;animation:shimmer 6s ease-in-out infinite}
+.lb-text{display:none}
+.lb-close{position:absolute;top:.75rem;right:1rem;font-size:.72rem;color:#999;font-family:var(--sans);letter-spacing:.08em;text-transform:uppercase}
+
+.grid-note{font-size:.72rem;color:var(--sub);font-style:italic;margin-top:.75rem;line-height:1.6}
+
+.bbw-hold{background:var(--rose-t);border:1px solid #EACCC9;padding:1.5rem 2rem;text-align:center;margin-top:1rem}
+.bbw-hold p{font-size:.78rem;color:var(--mid);line-height:1.7}
+.bbw-hold strong{color:var(--accent);font-weight:600}
+
+/* Image-ready: when real images replace placeholders */
+.ph img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  border-radius:2px;
+}
+/* Per-image crop control: add class to .ph, e.g. .ph.crop-top img{object-position:top} */
+.ph.crop-top img{object-position:center top}
+.ph.crop-bottom img{object-position:center bottom}
+.ph.crop-left img{object-position:left center}
+.ph.crop-right img{object-position:right center}
+.ph.no-crop img{object-fit:contain;background:#FBF7EC}
+
+@media(max-width:640px){
+  .pg{padding:1rem}
+  .sec{padding:2rem 0}
+  .blabel{font-size:.95rem}
+  .bmeta{font-size:.68rem}
+  .sdesc{font-size:.78rem;line-height:1.7;margin-bottom:1rem}
+
+  /* Force all grids to 2-col, auto height */
+  .g-god,.g-lar,.g-lor,.g-has,
+  [style*="display:grid"]{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    grid-template-rows:auto!important;
+    grid-auto-rows:auto!important;
+  }
+  /* Every cell: reset spans, fixed aspect ratio */
+  .g-god .ph,.g-lar .ph,.g-lor .ph,.g-has .ph,
+  [style*="display:grid"]>.ph{
+    grid-column:auto!important;
+    grid-row:auto!important;
+    aspect-ratio:4/3;
+    min-height:0;
+  }
+  /* Casabella: 2-col, compact */
+  .g-cas{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    grid-template-rows:auto!important;
+  }
+  .g-cas .ph{
+    grid-column:auto!important;
+    aspect-ratio:3/2;
+  }
+
+  /* Lightbox mobile */
+  .lb-inner{max-width:95vw;max-height:80vh}
+  .lb-close{font-size:.6rem;top:.5rem;right:.5rem}
+
+  /* BBW hold */
+  .bbw-hold{padding:1rem}
+}
+</style>
+</head>
+<body>
+<div class="pg">
+
+<div class="ey"><div class="ey-bar"></div><span>Selected Work</span></div>
+
+
+<!-- ═══════════════════ GODIVA ═══════════════════ -->
+<div class="sec brand-godiva" style="border-top:none;padding-top:0">
+  <div class="blabel">Godiva</div>
+  <p class="bmeta">Seasonal packaging, original hand-drawn illustration, and gift collection development.</p>
+  <p class="sdesc">Created packaging and original artwork for seasonal gift collections across an eight-year partnership, helping refresh the brand's presentation for recurring holiday programs.</p>
+
+  <div class="g-god" style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:220px 140px 140px 160px;gap:6px">
+    <div class="ph" style="grid-column:1/3;grid-row:1"><div class="ph-text">Hero — seasonal packaging spread</div></div>
+    <div class="ph" style="grid-column:3;grid-row:1"><div class="ph-text">Diwali box</div></div>
+    <div class="ph"><div class="ph-text">Diwali detail</div></div>
+    <div class="ph"><div class="ph-text">Gifting collection</div></div>
+    <div class="ph"><div class="ph-text">Product shot</div></div>
+    <div class="ph" style="grid-column:1/3"><div class="ph-text">Seasonal alt — wide</div></div>
+    <div class="ph"><div class="ph-text">Detail / ribbon</div></div>
+    <div class="ph"><div class="ph-text">Program 3 — A</div></div>
+    <div class="ph"><div class="ph-text">Program 3 — B</div></div>
+    <div class="ph"><div class="ph-text">Program 3 — C</div></div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════ L'ARGANIQUE ═══════════════════ -->
+<div class="sec brand-larganique">
+  <div class="blabel">L'arganique Beauté</div>
+  <p class="bmeta">Brand strategy, creative direction, campaign development, packaging, strategic imagery, digital flagship, and D2C integration across a six-year partnership.</p>
+  <p class="sdesc">Worked as the founder's right hand in shaping the brand from a private-label product into a business that achieved a successful acquisition. The work supported placements at the Emmy Awards and Critics' Choice Awards, and the hero fragrance won Best New Premium Fragrance at the Pure Beauty Global Awards three years in a row. Exclusive retail partnership with The Shops at Ritz-Carlton.</p>
+
+  <div class="g-lar" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:180px 140px 140px 180px;gap:6px">
+    <div class="ph" style="grid-column:1/3;grid-row:1"><div class="ph-text">Campaign hero</div></div>
+    <div class="ph" style="grid-column:3;grid-row:1/3"><div class="ph-text">Bottle tall</div></div>
+    <div class="ph" style="grid-column:4;grid-row:1"><div class="ph-text">Detail 1</div></div>
+    <div class="ph" style="grid-column:1;grid-row:2"><div class="ph-text">Detail 2</div></div>
+    <div class="ph" style="grid-column:2;grid-row:2"><div class="ph-text">Detail 3</div></div>
+    <div class="ph" style="grid-column:4;grid-row:2"><div class="ph-text">Detail 4</div></div>
+    <div class="ph" style="grid-column:1/3;grid-row:3"><div class="ph-text">Ritz-Carlton retail</div></div>
+    <div class="ph" style="grid-column:3;grid-row:3"><div class="ph-text">Secondary packaging</div></div>
+    <div class="ph" style="grid-column:4;grid-row:3"><div class="ph-text">Label detail</div></div>
+    <div class="ph" style="grid-column:1/3;grid-row:4"><div class="ph-text">E-commerce</div></div>
+    <div class="ph" style="grid-column:3/5;grid-row:4"><div class="ph-text">Packaging flat lay</div></div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════ L'ORÉAL ═══════════════════ -->
+<div class="sec brand-loreal">
+  <div class="blabel">L'Oréal</div>
+  <p class="bmeta">Packaging, conceptual product development, brand expression, and strategic imagery across three divisions spanning nine years.</p>
+  <p class="sdesc">The work began with SoftSheen-Carson and expanded to Multicultural Beauty and the L'Oréal Kids World personal care range, developing category programs, visual systems, and packaging concepts used to evaluate direction.</p>
+
+  <div class="g-lor" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:200px 140px 140px 140px;gap:6px">
+    <div class="ph" style="grid-column:1/3;grid-row:1"><div class="ph-text">SSC — packaging range</div></div>
+    <div class="ph" style="grid-column:3;grid-row:1"><div class="ph-text">SSC product</div></div>
+    <div class="ph" style="grid-column:4;grid-row:1"><div class="ph-text">SSC product</div></div>
+    <div class="ph" style="grid-column:1/3;grid-row:2"><div class="ph-text">Maybelline / Garnier — wide</div></div>
+    <div class="ph" style="grid-column:3;grid-row:2"><div class="ph-text">M/G product</div></div>
+    <div class="ph" style="grid-column:4;grid-row:2"><div class="ph-text">M/G product</div></div>
+    <div class="ph" style="grid-column:1;grid-row:3"><div class="ph-text">Kids World</div></div>
+    <div class="ph" style="grid-column:2;grid-row:3"><div class="ph-text">KW product</div></div>
+    <div class="ph" style="grid-column:3;grid-row:3"><div class="ph-text">Product shot</div></div>
+    <div class="ph" style="grid-column:4;grid-row:3"><div class="ph-text">Product shot</div></div>
+    <div class="ph" style="grid-column:1/3;grid-row:4"><div class="ph-text">Cross-division overview</div></div>
+    <div class="ph" style="grid-column:3;grid-row:4"><div class="ph-text">Shelf / retail</div></div>
+    <div class="ph" style="grid-column:4;grid-row:4"><div class="ph-text">Back panel / detail</div></div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════ CASABELLA ═══════════════════ -->
+<div class="sec brand-casabella">
+  <div class="blabel">Casabella</div>
+  <p class="bmeta">Original artwork, surface pattern design, packaging, product graphics, website design, and strategic imagery.</p>
+  <p class="sdesc">Developed an original artist collection for the product line, including surface patterns, packaging systems, large-format product graphics, and extensions across cleaning tools. The collection replaced licensed Keith Haring graphics with brand-owned intellectual property. Featured in Graphic Design USA and Home Furnishings News. Worldwide retail rollout. Highest revenue in five years.</p>
+
+  <div class="g-cas" style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:160px 120px;gap:6px">
+    <div class="ph" style="grid-column:1/3"><div class="ph-text">Hero — supergraphic / pattern</div></div>
+    <div class="ph"><div class="ph-text">Product shot</div></div>
+    <div class="ph"><div class="ph-text">Retail shelf</div></div>
+    <div class="ph"><div class="ph-text">Brand system</div></div>
+    <div class="ph"><div class="ph-text">Website or detail</div></div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════ HASBRO ═══════════════════ -->
+<div class="sec brand-hasbro">
+  <div class="blabel">Hasbro</div>
+  <p class="bmeta">Brand strategy, retail environment concepts, modular fixtures, visual merchandising, and strategic imagery across three successive programs.</p>
+  <p class="sdesc">Designed modular retail environments and merchandising systems for Playskool, shown at the Hong Kong International Toy Fair and adopted for nationwide deployment. The work expanded across Tonka, Playskool, and a combined Vehicles Merchandising program that brought Tonka, Transformers, and Star Wars together within a single retail aisle.</p>
+
+  <div class="g-has" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:160px 160px 140px;gap:6px">
+    <div class="ph" style="grid-column:1/3;grid-row:1"><div class="ph-text">Retail environment</div></div>
+    <div class="ph" style="grid-column:3/5;grid-row:1"><div class="ph-text">Product display</div></div>
+    <div class="ph"><div class="ph-text">Tonka detail</div></div>
+    <div class="ph"><div class="ph-text">Playskool</div></div>
+    <div class="ph"><div class="ph-text">Structural pkg</div></div>
+    <div class="ph"><div class="ph-text">Vehicles merch</div></div>
+    <div class="ph"><div class="ph-text">In-store — expanded</div></div>
+    <div class="ph"><div class="ph-text">Product — expanded</div></div>
+    <div class="ph"><div class="ph-text">Retail — expanded</div></div>
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════ BBW ═══════════════════ -->
+<div class="sec brand-bbw">
+  <div class="blabel">Bath & Body Works</div>
+  <p class="bmeta">On-staff corporate design leadership before building Joshi Design.</p>
+  <p class="sdesc">Prior to building Joshi Design in 2007, held an in-house corporate design leadership role at Bath & Body Works, part of L Brands, Inc., leading design direction and brand management across four flagship beauty brands: the Wexler skincare line, Henri Bendel luxury fragrance and body care collection, Les Couvent des Minimes, and the American Girl beauty collection.</p>
+
+  <div class="bbw-hold">
+    <p>Case study in progress.</p>
+  </div>
+</div>
+
+
+</div>
+
+<div class="lb" id="lb" onclick="this.classList.remove('on')">
+  <div class="lb-inner">
+    <div class="lb-close">esc to close</div>
+    <div class="lb-text" id="lb-label"></div>
+  </div>
+</div>
+
+<script>
+const lb = document.getElementById('lb');
+const lbInner = lb.querySelector('.lb-inner');
+const lbLabel = document.getElementById('lb-label');
+
+// Stagger shimmer per cell
+document.querySelectorAll('.ph').forEach((el, i) => {
+  el.style.animationDelay = (i * 0.6) + 's';
+  el.style.animationDuration = (6 + Math.random() * 4) + 's';
+});
+
+document.querySelectorAll('.ph').forEach(el => {
+  el.addEventListener('click', () => {
+    const r = el.getBoundingClientRect();
+    const ratio = r.width / r.height;
+    const maxW = window.innerWidth * 0.9;
+    const maxH = window.innerHeight * 0.85;
+    let w, h;
+    if (maxW / ratio <= maxH) {
+      w = maxW; h = maxW / ratio;
+    } else {
+      h = maxH; w = maxH * ratio;
+    }
+    lbInner.style.width = w + 'px';
+    lbInner.style.height = h + 'px';
+    const cs = getComputedStyle(el);
+    lbInner.style.backgroundImage = cs.backgroundImage;
+    lbInner.style.backgroundSize = cs.backgroundSize;
+    lb.classList.add('on');
+  });
+});
+lb.addEventListener('click', () => lb.classList.remove('on'));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') lb.classList.remove('on');
+});
+</script>
+</body>
+</html>
